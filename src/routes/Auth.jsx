@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { BACKEND } from '../utils/utils';
+import AuthTest from './AuthTest';
+
 const backend = BACKEND;
 const Input = ({ name, label, error, ...rest }) => {
 	return (
@@ -63,6 +65,7 @@ export default function Auth() {
 
 	return (
 		<>
+			<AuthTest />
 			<h1>Auth</h1>
 			<form>
 				{' '}
