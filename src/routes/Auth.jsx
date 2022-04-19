@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BACKEND } from '../utils/utils';
+import urlcat from 'urlcat';
 import AuthTest from './AuthTest';
 
 const backend = BACKEND;
@@ -36,7 +37,7 @@ export default function Auth() {
 	const submitInput = async (e) => {
 		e.preventDefault();
 		console.log(details);
-		const res = await fetch(`${backend}/auth/login`, {
+		const res = await fetch(urlcat(backend, '/auth/login'), {
 			credentials: 'include',
 			method: 'POST',
 			headers: {
@@ -50,7 +51,7 @@ export default function Auth() {
 	};
 
 	const testAuth = (e) => {
-		fetch(`${backend}/auth/test`, {
+		fetch(urlcat(backend, '/auth/test'), {
 			credentials: 'include',
 			method: 'GET',
 			headers: {
