@@ -51,6 +51,7 @@ export default function Auth() {
 	};
 
 	const testAuth = (e) => {
+		e.preventDefault();
 		fetch(urlcat(backend, '/auth/test'), {
 			credentials: 'include',
 			method: 'GET',
